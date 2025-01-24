@@ -1,8 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { collection, addDoc, getDocs } from "@firebase/firestore";
-import { getAnalytics } from "firebase/analytics"; // Analytics qo'shildi
+import { collection, addDoc, getDocs } from "@firebase/firestore"; // Perbarui ini
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyChJ8hQa5v4WuElHRuqW2XL6BTNUO4RFgA",
   authDomain: "my-portfolio-b205f.firebaseapp.com",
@@ -16,6 +16,5 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-const analytics = getAnalytics(app); // Analytics qo'shildi
 
-export { db, collection, addDoc, analytics };
+export { db, collection, addDoc };

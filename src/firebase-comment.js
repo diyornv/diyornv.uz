@@ -1,48 +1,20 @@
-import { db, collection, addDoc, getDocs } from "./firebase"; // Firebase konfiguratsiyasidan import
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+import { collection, addDoc } from "@firebase/firestore";
 
-// Komment qo'shish funksiyasi
-async function addComment(username, commentText) {
-  try {
-    const commentsCollection = collection(db, "portfolio-comments"); // Komment kolleksiyasini tanlash
-    await addDoc(commentsCollection, {
-      username: username,
-      comment: commentText,
-      createdAt: new Date(), // Sana va vaqt
-    });
-    console.log("Comment successfully added!");
-  } catch (error) {
-    console.error("Error adding comment: ", error);
-  }
-}
+const firebaseConfig = {
+  apiKey: "AIzaSyChJ8hQa5v4WuElHRuqW2XL6BTNUO4RFgA",
+  authDomain: "my-portfolio-b205f.firebaseapp.com",
+  projectId: "my-portfolio-b205f",
+  storageBucket: "my-portfolio-b205f.firebasestorage.app",
+  messagingSenderId: "623971620922",
+  appId: "1:623971620922:web:f4ef4495d0b3e0aaeb7d03",
+};
 
-// Kommentlarni yuklash funksiyasi
-async function loadComments() {
-  try {
-    const commentsCollection = collection(db, "portfolio-comments"); // Komment kolleksiyasini tanlash
-    const commentSnapshot = await getDocs(commentsCollection); // Kommentlarni yuklash
+// Initialize with a unique name
+const app = initializeApp(firebaseConfig, "comments-app");
+const db = getFirestore(app);
+const storage = getStorage(app);
 
-    const commentsSection = document.getElementById("commentsSection"); // Kommentlar uchun bo'sh joy
-    commentsSection.innerHTML = "<h2>Comments</h2>"; // Kommentlarni tozalash va sarlavha
-
-    // Hujjatlarni aylantirib, har bir kommentni ko'rsatish
-    commentSnapshot.forEach((doc) => {
-      const commentData = doc.data();
-      const commentElement = document.createElement("div");
-
-      // HTML formatida har bir kommentni yaratish
-      commentElement.innerHTML = `
-                <p><strong>${commentData.username}:</strong> ${
-        commentData.comment
-      }</p>
-                <small>${new Date(
-                  commentData.createdAt.seconds * 1000
-                ).toLocaleString()}</small>
-            `;
-      commentsSection.appendChild(commentElement); // Kommentni sahifaga qo'shish
-    });
-  } catch (error) {
-    console.error("Error loading comments: ", error);
-  }
-}
-
-export { addComment, loadComments };
+export { db, storage, collection, addDoc };
