@@ -15,7 +15,7 @@ Tech Stack used:
 - SweetAlert2
 
 Link Website:
-https://www.iyorNv.uz/
+https://www.DiyorNv.uz/
 
 1. **Download project:**
 
