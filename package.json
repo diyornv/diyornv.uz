@@ -39,7 +39,7 @@
     "shadcn-ui": "^0.2.3",
     "spline": "^0.0.0",
     "styled-components": "^6.1.13",
-    "sweetalert2": "^11.15.0",
+    "sweetalert2": "^11.6.13",
     "tailwind-merge": "^2.5.5",
     "typewriter-effect": "^2.21.0"
   },
