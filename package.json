@@ -9,6 +9,11 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "overrides": {
+  "react-swipeable-views": {
+    "react": "^18.3.1"
+  }
+},
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
