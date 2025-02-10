@@ -113,6 +113,7 @@ const techStacks = [
   { icon: "styled-component.svg", language: "Styled" },
   { icon: "sass.svg", language: "Sass" },
   { icon: "shadcn.svg", language: "Shadcnui" },
+  { icon: "aos.svg", language: "Aos css " },
   // { icon: "MUI.svg", language: "Material UI" },
   // { icon: "vercel.svg", language: "Vercel" },
   // { icon: "SweetAlert.svg", language: "SweetAlert2" },
