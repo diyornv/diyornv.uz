@@ -1,4 +1,4 @@
-# Portofolio V5
+# Portofolio diyornv
 
 Hello everyone!
 Let me introduce myself, I'm diyorNv and on this occasion I'd like to share a portfolio website project I've developed.
