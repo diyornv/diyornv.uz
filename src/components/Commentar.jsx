@@ -127,6 +127,56 @@ const CommentForm = memo(({ onSubmit, isSubmitting, error }) => {
         />
       </div>
 
+      {/* <div className="space-y-2" data-aos="fade-up" data-aos-duration="1400">
+        <label className="block text-sm font-medium text-white">
+          Profile Photo <span className="text-gray-400">(optional)</span>
+        </label>
+        <div className="flex items-center gap-4 p-4 bg-white/5 border border-white/10 rounded-xl">
+          {imagePreview ? (
+            <div className="flex items-center gap-4">
+              <img
+                src={imagePreview}
+                alt="Profile preview"
+                className="w-16 h-16 rounded-full object-cover border-2 border-indigo-500/50"
+              />
+              <button
+                type="button"
+                onClick={() => {
+                  setImagePreview(null);
+                  setImageFile(null);
+                  if (fileInputRef.current) fileInputRef.current.value = "";
+                }}
+                className="flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/20 text-red-400 hover:bg-red-500/30 transition-all group"
+              >
+                <X className="w-4 h-4" />
+                <span>Remove Photo</span>
+              </button>
+            </div>
+          ) : (
+            <div className="w-full">
+              <input
+                type="file"
+                ref={fileInputRef}
+                onChange={handleImageChange}
+                accept="image/*"
+                className="hidden"
+              />
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                className="w-full flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-indigo-500/20 text-indigo-400 hover:bg-indigo-500/30 transition-all border border-dashed border-indigo-500/50 hover:border-indigo-500 group"
+              >
+                <ImagePlus className="w-5 h-5 group-hover:scale-110 transition-transform" />
+                <span>Choose Profile Photo</span>
+              </button>
+              <p className="text-center text-gray-400 text-sm mt-2">
+                Max file size: 5MB
+              </p>
+            </div>
+          )}
+        </div>
+      </div> */}
+
       <button
         type="submit"
         disabled={isSubmitting}
