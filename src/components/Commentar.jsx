@@ -303,7 +303,7 @@ const Komentar = () => {
           </h3>
         </div>
       </div>
-      <div className="p-6 space-y-6">
+      {/* <div className="p-6 space-y-6">
         {error && (
           <div
             className="flex items-center gap-2 p-4 text-red-400 bg-red-500/10 border border-red-500/20 rounded-xl"
@@ -345,7 +345,7 @@ const Komentar = () => {
             ))
           )}
         </div>
-      </div>
+      </div> */}
 
       <style jsx>{`
         .custom-scrollbar::-webkit-scrollbar {
